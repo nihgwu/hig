@@ -27,6 +27,7 @@ jobs:
             - packages/icon/node_modules
             - packages/icon-button/node_modules
             - packages/icons/node_modules
+            - packages/notifications-toast/node_modules
             - packages/react/node_modules
             - packages/rich-text/node_modules
             - packages/side-nav/node_modules
@@ -56,6 +57,7 @@ jobs:
             - packages/icon/build
             - packages/icon-button/build
             - packages/icons/build
+            - packages/notifications-toast/build
             - packages/rich-text/build
             - packages/side-nav/build
             - packages/skeleton-item/build
