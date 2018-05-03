@@ -5794,6 +5794,12 @@ hig-react@0.28.35:
   dependencies:
     hig-vanilla "^0.1.25"
 
+hig-react@^0.28.36:
+  version "0.28.36"
+  resolved "https://registry.yarnpkg.com/hig-react/-/hig-react-0.28.36.tgz#8b5b90970d376e76aef0399e54309b69727b4cd3"
+  dependencies:
+    hig-vanilla "^0.1.26"
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
