@@ -1,10 +1,10 @@
-defaults:
-  docker: &ref_0
+defaults: &defaults
+  docker:
     - image: 'circleci/node:8.10-stretch'
 version: 4
 jobs:
   bootstrap:
-    docker: *ref_0
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -54,7 +54,7 @@ jobs:
             - packages/typography/node_modules
             - packages/vanilla/node_modules
   package-build:
-    docker: *ref_0
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -100,7 +100,7 @@ jobs:
             - packages/typography/build
             - packages/vanilla/lib
   react-test:
-    docker: *ref_0
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -120,7 +120,7 @@ jobs:
       - store_artifacts:
           path: packages/storybook/coverage
   visual-test:
-    docker: *ref_0
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -151,7 +151,7 @@ jobs:
       - store_artifacts:
           path: packages/storybook/gemini-report
   playground-deploy:
-    docker: *ref_0
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -166,7 +166,7 @@ jobs:
           command: yarn deploy-playground $PLAYGROUND_DOMAIN
           working_directory: packages/react
   canary-packages-deploy:
-    docker: *ref_0
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -183,7 +183,7 @@ jobs:
           name: Deploy pre-release versions of packages
           command: yarn publish-canary
   storybook-branch-deploy:
-    docker: *ref_0
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -198,7 +198,7 @@ jobs:
           command: 'yarn storybook-deploy --domain `echo hig-$CIRCLE_BRANCH.surge.sh | awk ''echo gsub(/\//, "-")''`'
           working_directory: packages/storybook
   packages-deploy:
-    docker: *ref_0
+    <<: *defaults
     steps:
       - checkout
       - run:
